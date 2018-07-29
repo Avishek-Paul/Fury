@@ -4,9 +4,11 @@ class Bear{
   int ypos;
   int direction;
   int size = 75;
+  boolean dead;
   
   Bear(){
     
+      dead = false;
       direction = int(random(0,4));    
     
       switch(direction){
@@ -35,6 +37,8 @@ class Bear{
   
   void move(){
       
+    if(!dead){
+      
       switch(direction){
         case 0: //left
           xpos += 100;
@@ -49,7 +53,8 @@ class Bear{
           ypos -= 100;
           break;
       }
-        
+      
+    }
   }
   
   

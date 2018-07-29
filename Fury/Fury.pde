@@ -7,21 +7,24 @@ void setup(){
   int width = 700;
   int height = 900;
   size(700, 900);
-  background(#3498DB);
   
   drawBoard();
   player = new Player();
+  delay(1000);
 }
 
 void draw(){
-  if(millis()-time>=750){
-    drawBoard();
-    player.update();
-    time = millis();
+  if(!player.dead){
+    if(millis()-time>=750){
+      drawBoard();
+      player.update();
+      time = millis();
+    }
   }
 }
 
 void drawBoard(){
+  background(#3498DB);
   fill(#FFFFFF);
   rectMode(CENTER);  
   

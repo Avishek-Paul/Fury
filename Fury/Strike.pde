@@ -35,9 +35,12 @@ class Strike{
           break;
       }
       
+    xpos = width/2 + lr_mod;
+    ypos = height/2 + ud_mod;
+    
     fill(#D3D3D3);
     rectMode(CENTER);
-    rect(width/2 + lr_mod, height/2 + ud_mod, strike_width, strike_height, 5);
+    rect(xpos, ypos, strike_width, strike_height, 5);
     
   }
   

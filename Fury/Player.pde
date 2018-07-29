@@ -5,6 +5,7 @@ class Player{
   int ypos = height/2;
   int tick = 0;
   int time = 0;
+  int points = 0;
   
   Player(){
     dead = false;
@@ -19,18 +20,40 @@ class Player{
   
   void swing_left(){
     Strike strike = new Strike(0);
+    check_swing(strike);
   }
   
   void swing_right(){
     Strike strike = new Strike(2);
+    check_swing(strike);
   }
   
   void swing_up(){
     Strike strike = new Strike(1);
+    check_swing(strike);
   }
   
   void swing_down(){
     Strike strike = new Strike(3);
+    check_swing(strike);
+  }
+  
+  void check_swing(Strike strike){
+    for( int i=0; i<this.bears.size()-1;i++){
+      Bear bear = this.bears.get(i);
+      if(bear.xpos == strike.xpos && bear.ypos == strike.ypos){
+        bear.dead = true;
+        bears.remove(i);
+        points++;
+      }
+    }
+  }
+  
+  void display_points(){
+    fill(50);
+    rectMode(CENTER);
+    textSize(50);
+    text(str(points), 50, 50, 100, 100);  // Text wraps within text box
   }
   
   //---------------------------------------------------BEAR STUFF HERE----------------------------------------------------------------------------
@@ -70,6 +93,7 @@ class Player{
       move_bears();
       show_bears();
       check_status();
+      display_points();
     }
     
   }
