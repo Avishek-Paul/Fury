@@ -1,5 +1,7 @@
-Player human;
+Player player;
 
+int time = 0;
+boolean done = false;
 void setup(){
   
   int width = 700;
@@ -8,11 +10,15 @@ void setup(){
   background(#3498DB);
   
   drawBoard();
-  human = new Player();
+  player = new Player();
 }
 
 void draw(){
-  
+  if(millis()-time>=2000){
+    drawBoard();
+    player.update();
+    time = millis();
+  }
 }
 
 void drawBoard(){
@@ -28,24 +34,4 @@ void drawBoard(){
   }
 }
 
-void keyPressed(){
-
-  if(key==CODED){
-    
-    if(key==UP){
-      human.swing_up();
-    } 
-    else if(key==DOWN){
-      human.swing_down();
-    }
-    else if(key==LEFT){
-      human.swing_left();
-    }
-    else if(key==RIGHT){ 
-      human.swing_right();
-    }
-    
-  }
   
-  
-}

@@ -2,11 +2,13 @@ class Bear{
   
   int xpos;
   int ypos;
-  int direction = int(random(0,4));
+  int direction;
   int size = 75;
   
   Bear(){
-            
+    
+      direction = int(random(0,4));    
+    
       switch(direction){
         case 0: //left
           xpos = 50;
@@ -25,7 +27,10 @@ class Bear{
           ypos = height-150;
           break;
       }
-          
+      
+    fill(#96281B);
+    ellipse(xpos,ypos,size,size);
+                
   }
   
   void move(){
@@ -35,16 +40,16 @@ class Bear{
           xpos += 100;
           break;  
         case 1: //up
-          ypos -= 100;
+          ypos += 100;
           break;
         case 2: //right
           xpos -= 100;
           break;       
         case 3: //down
-          ypos += 100;
+          ypos -= 100;
           break;
       }
-    
+        
   }
   
   
@@ -52,7 +57,6 @@ class Bear{
     fill(#96281B);
     ellipse(xpos,ypos,size,size);
   }
-  
 }
   
   
