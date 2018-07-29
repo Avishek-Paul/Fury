@@ -40,7 +40,7 @@ class Strike{
     
     fill(#D3D3D3);
     rectMode(CENTER);
-    rect(xpos, ypos, strike_width, strike_height, 5);
+    rect(xpos, ypos, strike_width, strike_height, 5);    
     
   }
   

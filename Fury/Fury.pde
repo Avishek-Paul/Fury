@@ -14,13 +14,17 @@ void setup(){
 }
 
 void draw(){
+  
+  float speed = map(player.points, 0, 250, 750, 250);
+  
   if(!player.dead){
-    if(millis()-time>=750){
+    if(millis()-time>=speed){
       drawBoard();
       player.update();
       time = millis();
     }
   }
+  
 }
 
 void drawBoard(){
@@ -49,8 +53,12 @@ void keyPressed() {
     } else if (keyCode == RIGHT) {
       player.swing_right();
     } 
+  }
+  
+  if(key==RETURN || key==ENTER){
+      player = new Player();
+    }
     
-  } 
 }
 
 
