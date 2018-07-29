@@ -14,7 +14,7 @@ void setup(){
 }
 
 void draw(){
-  if(millis()-time>=2000){
+  if(millis()-time>=750){
     drawBoard();
     player.update();
     time = millis();
@@ -33,5 +33,24 @@ void drawBoard(){
     rect(width/2, 150 + i*100, 100, 100, 9);
   }
 }
+
+void keyPressed() {
+  if (key == CODED) {
+    
+    if (keyCode == UP) {
+      player.swing_up();
+    } else if (keyCode == DOWN) {
+      player.swing_down();
+    } else if (keyCode == LEFT) {
+      player.swing_left();
+    } else if (keyCode == RIGHT) {
+      player.swing_right();
+    } 
+    
+  } 
+}
+
+
+
 
   
