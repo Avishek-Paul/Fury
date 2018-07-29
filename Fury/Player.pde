@@ -18,27 +18,19 @@ class Player{
   }
   
   void swing_left(){
-    fill(#D3D3D3);
-    rectMode(CENTER);
-    rect(width/2 - 100, height/2, 100, 25, 5);
+    Strike strike = new Strike(0);
   }
   
   void swing_right(){
-    fill(#D3D3D3);
-    rectMode(CENTER);
-    rect(width/2 + 100, height/2, 100, 25, 5);
+    Strike strike = new Strike(2);
   }
   
   void swing_up(){
-    fill(#D3D3D3);
-    rectMode(CENTER);
-    rect(width/2, height/2 - 100, 25, 100, 5);
+    Strike strike = new Strike(1);
   }
   
   void swing_down(){
-    fill(#D3D3D3);
-    rectMode(CENTER);
-    rect(width/2, height/2 + 100, 25, 100, 5);
+    Strike strike = new Strike(3);
   }
   
   //---------------------------------------------------BEAR STUFF HERE----------------------------------------------------------------------------
