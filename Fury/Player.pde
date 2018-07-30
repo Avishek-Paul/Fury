@@ -3,6 +3,7 @@ class Player{
   boolean dead;
   int xpos = width/2;    
   int ypos = height/2;
+  int size = 75;
   int tick = 0;
   int time = 0;
   int points = 0;
@@ -10,12 +11,12 @@ class Player{
   Player(){
     dead = false;
     fill(#F5D76E);
-    ellipse(xpos, ypos, 75, 75);
+    ellipse(xpos, ypos, size, size);
   }
   
   void draw_player(){
     fill(#F5D76E);
-    ellipse(xpos, ypos, 75, 75);
+    ellipse(xpos, ypos, size, size);
   }
   
   void swing_left(){
@@ -65,6 +66,8 @@ class Player{
     for ( int i = 0; i < this.bears.size()-1; i++){
       if(this.bears.get(i).xpos == this.xpos && this.bears.get(i).ypos == this.ypos){
         this.dead = true;
+        fill(#B20000);
+        ellipse(this.xpos, this.ypos, size,size);
       }
     }
   }

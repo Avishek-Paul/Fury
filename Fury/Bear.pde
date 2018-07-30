@@ -30,7 +30,7 @@ class Bear{
           break;
       }
       
-    fill(#96281B);
+    fill(#595959);
     ellipse(xpos,ypos,size,size);
                 
   }
@@ -59,7 +59,7 @@ class Bear{
   
   
   void display(){
-    fill(#96281B);
+    fill(#595959);
     ellipse(xpos,ypos,size,size);
   }
 }

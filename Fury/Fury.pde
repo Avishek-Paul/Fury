@@ -1,6 +1,9 @@
 Player player;
 
-int time = 0;
+int game_time = 0;
+int attack_time = 0;
+int attack_speed = 150;
+
 boolean done = false;
 void setup(){
   
@@ -18,10 +21,10 @@ void draw(){
   float speed = map(player.points, 0, 250, 750, 250);
   
   if(!player.dead){
-    if(millis()-time>=speed){
+    if(millis()-game_time>=speed){
       drawBoard();
       player.update();
-      time = millis();
+      game_time = millis();
     }
   }
   
@@ -42,7 +45,7 @@ void drawBoard(){
 }
 
 void keyPressed() {
-  if (key == CODED) {
+  if (key == CODED && millis()-attack_time >= attack_speed) {
     
     if (keyCode == UP) {
       player.swing_up();
@@ -52,12 +55,13 @@ void keyPressed() {
       player.swing_left();
     } else if (keyCode == RIGHT) {
       player.swing_right();
-    } 
+    }
+    attack_time = millis();
   }
   
-  if(key==RETURN || key==ENTER){
+  if(player.dead && (key==RETURN || key==ENTER)){
       player = new Player();
-    }
+  }
     
 }
 
