@@ -5,12 +5,11 @@ int attack_speed = 150;
 
 Player player;
 
-void setup(){
-  
+void setup(){  
   int width = 700;
   int height = 700;
   size(700, 700);
-  
+    
   drawBoard();
   player = new Player();
   delay(1000);
@@ -31,17 +30,8 @@ void draw(){
 }
 
 void drawBoard(){
-  background(#3498DB);
-  fill(#FFFFFF);
-  rectMode(CENTER);  
-  
-  for(int i=0; i<8; i++){
-    rect(50 + i*100, height/2 , 100, 100, 7);
-  }
-  
-  for(int i=0; i<7; i++){
-    rect(width/2, 50 + i*100, 100, 100, 9);
-  }
+  PImage bg_ice = loadImage("bg_ice.png");  
+  background(bg_ice);
 }
 
 void keyPressed() {

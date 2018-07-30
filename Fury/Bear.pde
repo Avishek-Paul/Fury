@@ -4,7 +4,9 @@ class Bear{
   int ypos;
   int direction;
   int size = 75;
+  PImage bear_img;
   boolean dead;
+  
   
   Bear(){
     
@@ -15,23 +17,26 @@ class Bear{
         case 0: //left
           xpos = 50;
           ypos = height/2;
+          bear_img = loadImage("white_bear_left.png");
           break;  
         case 1: //up
           xpos = width/2;
           ypos = 50;
+          bear_img = loadImage("white_bear_up.png");
           break;
         case 2: //right
           xpos = width-50;
           ypos = height/2;
+          bear_img = loadImage("white_bear_right.png");
           break;       
         case 3: //down
           xpos = width/2;
           ypos = height-50;
+          bear_img = loadImage("white_bear_down.png");
           break;
       }
       
-    fill(#595959);
-    ellipse(xpos,ypos,size,size);
+    display();
                 
   }
   
@@ -59,8 +64,8 @@ class Bear{
   
   
   void display(){
-    fill(#595959);
-    ellipse(xpos,ypos,size,size);
+    imageMode(CENTER);
+    image(bear_img, xpos, ypos);
   }
 }
   
