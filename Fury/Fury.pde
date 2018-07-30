@@ -1,10 +1,10 @@
-Player player;
 
 int game_time = 0;
 int attack_time = 0;
 int attack_speed = 150;
 
-boolean done = false;
+Player player;
+
 void setup(){
   
   int width = 700;

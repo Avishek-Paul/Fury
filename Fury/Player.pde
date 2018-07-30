@@ -4,7 +4,6 @@ class Player{
   int xpos = width/2;    
   int ypos = height/2;
   int size = 75;
-  int tick = 0;
   int time = 0;
   int points = 0;
   
