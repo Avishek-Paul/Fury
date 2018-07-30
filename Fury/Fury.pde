@@ -8,8 +8,8 @@ boolean done = false;
 void setup(){
   
   int width = 700;
-  int height = 900;
-  size(700, 900);
+  int height = 700;
+  size(700, 700);
   
   drawBoard();
   player = new Player();
@@ -40,7 +40,7 @@ void drawBoard(){
   }
   
   for(int i=0; i<7; i++){
-    rect(width/2, 150 + i*100, 100, 100, 9);
+    rect(width/2, 50 + i*100, 100, 100, 9);
   }
 }
 

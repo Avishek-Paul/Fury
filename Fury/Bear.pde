@@ -18,7 +18,7 @@ class Bear{
           break;  
         case 1: //up
           xpos = width/2;
-          ypos = 150;
+          ypos = 50;
           break;
         case 2: //right
           xpos = width-50;
@@ -26,7 +26,7 @@ class Bear{
           break;       
         case 3: //down
           xpos = width/2;
-          ypos = height-150;
+          ypos = height-50;
           break;
       }
       
