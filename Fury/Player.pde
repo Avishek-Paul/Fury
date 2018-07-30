@@ -3,8 +3,7 @@ class Player{
   boolean dead;
   int xpos = width/2;    
   int ypos = height/2;
-  int size = 75;
-  int time = 0;
+  int size = 75;    
   int points = 0;
   
   Player(){
@@ -14,9 +13,15 @@ class Player{
   }
   
   void draw_player(){
-    fill(#F5D76E);
-    ellipse(xpos, ypos, size, size);
+    if(!dead){
+      fill(#F5D76E);
+      ellipse(xpos, ypos, size, size);
+    } else {
+        fill(#B20000);
+        ellipse(xpos, ypos, size,size);
+    }
   }
+  
   
   void swing_left(){
     Strike strike = new Strike(0);
@@ -65,8 +70,7 @@ class Player{
     for ( int i = 0; i < this.bears.size()-1; i++){
       if(this.bears.get(i).xpos == this.xpos && this.bears.get(i).ypos == this.ypos){
         this.dead = true;
-        fill(#B20000);
-        ellipse(this.xpos, this.ypos, size,size);
+        draw_player();
       }
     }
   }
@@ -88,8 +92,7 @@ class Player{
   //-------------------------------------------------------------------MAIN CALL FUNCTION--------------------------------------------------------------------------------
   
   void update(){
-    
-    player.draw_player();
+    draw_player();
     if(!dead){
       add_bear();
       move_bears();
@@ -97,7 +100,6 @@ class Player{
       check_status();
       display_points();
     }
-    
   }
   
   
